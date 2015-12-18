@@ -19,6 +19,16 @@ app.get('/students', function(req,res){
 	});
 });
 
+app.get('/students/new', function(req,res){
+	res.render('new');
+});
+
+app.post('/students', function(req, res){
+	console.log(req.body);
+	knex('students').insert({name: req.body.studentName});
+
+	res.redirect('students');
+});
 app.listen(3000, function(){
 	console.log("knwewjfnjfnnf");
 });
