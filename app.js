@@ -52,6 +52,23 @@ app.put('/students/:id', function (req, res) {
   	});
 });
 
+app.get('/students/:id/delete', function(req, res){
+	knex('students').where({id: parseInt(req.params.id)}).first().then(function(student){
+		res.render('show', {student: student});
+	});
+});
+
+app.delete('/students/:id', function (req, res) {
+	//find the student
+	//delete the student
+	//redirect to students
+	knex('students')
+  	.where('id', '=', req.params.id).first()
+  	.del().then(function(){
+  		// redirect to students
+  		res.redirect('/students');
+  	});
+});
 app.listen(3000, function(){
 	console.log("knwewjfnjfnnf");
 });

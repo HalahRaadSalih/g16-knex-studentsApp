@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Delete Student</title>
+</head>
+<body>
+	<form method="POST" action="/students/<%= student.id%>?_method=DELETE"+>
+		<label>Student Name</label>
+		<input type="text" name="studentName" id="studentName" 
+		value=<%- student.name %>>
+		<input type="submit" value="Delete Student">
+	</form>
+</body>
+</html>
