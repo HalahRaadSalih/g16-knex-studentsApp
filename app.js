@@ -25,9 +25,10 @@ app.get('/students/new', function(req,res){
 
 app.post('/students', function(req, res){
 	console.log(req.body);
-	knex('students').insert({name: req.body.studentName});
+	knex('students').insert({name: req.body.studentName}).then(function(){
+			res.redirect('/students');
+	});
 
-	res.redirect('students');
 });
 app.listen(3000, function(){
 	console.log("knwewjfnjfnnf");
