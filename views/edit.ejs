@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Edit Student</title>
+</head>
+<body>
+	<form method="POST" action="/students/<%= student.id%>?_method=PUT"+>
+		<label>Student Name</label>
+		<input type="text" name="studentName" id="studentName" 
+		value=<%- student.name %>>
+		<input type="submit" value="Update Student">
+	</form>
+</body>
+</html>
